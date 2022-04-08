@@ -1,0 +1,21 @@
+<mat-card-header class="wish">
+    <mat-card-title>My Wishlist ({{wishlistCount}})</mat-card-title>
+</mat-card-header>
+<div class="main" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="20px">
+    <mat-card *ngFor="let book of wishlist" fxFlex="60">
+        <div class="design" fxLayout="row" fxLayoutGap="40px">
+            <img src="assets/Image 11.png" >
+            <div fxLayout="column">
+                <div fxLayoutGap="450px" fxLayout="row">
+                    <p class="title">{{book.title}}</p>
+                    <img class="img" src="assets/delete_black_18dp.svg">
+                </div>
+                <p class="author">By Steve King</p>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <p>Rs. 1500</p>
+                    <p class="price">Rs. 2000</p>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

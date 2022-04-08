@@ -1,0 +1,69 @@
+<div class="main" fxLayoutAlign="center center" style="width:100vw;height:100vh">
+    <mat-card class="design" fxFlex="22">
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <img class="logo" src="assets/logo.png">
+            <p class="add"><strong>ONLINE BOOK SHOPPING</strong></p>
+        </div>
+    </mat-card>
+    <mat-card class="pages" fxFlex="26">
+        <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+            <mat-tab label="LOGIN">
+                <form [formGroup]="loginForm" >
+                    <mat-label>Email Id</mat-label>
+                    <mat-form-field class="email" appearance="outline">
+                        <input type="text" formControlName="emailId" matInput required>
+                        <mat-error>Enter Email or Phone</mat-error>
+                    </mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <mat-form-field class="password" appearance="outline">
+                        <input matInput formControlName="password" [type]="showPassword ? 'text' : 'password'">
+                        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                            {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                        <mat-error>Enter correct Password</mat-error>
+                    </mat-form-field>
+                    <a mat-button class="link1" routerLink="/forgotpassword" fxLayoutAlign="end end">Forgot
+                        password?</a>
+                    <div class="gap" fxLayout="row">
+                        <button mat-flat-button (click)="login()" class="btnlogin">Login</button>
+                    </div>
+                    <div fxLayoutAlign="center">
+                        <p class="or"><strong>OR</strong></p>
+                    </div>
+                    <div class="btn" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="25px">
+                        <button mat-flat-button class="btnfb">Facebook</button>
+                        <button mat-stroked-button class="btngoogle">Google</button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="SIGNUP">
+                <form [formGroup]="signupForm">
+                    <mat-label>Full Name</mat-label>
+                    <mat-form-field class="name" appearance="outline">
+                        <input formControlName="fullName" type="text" matInput>
+                        <mat-error>Enter Full Name</mat-error>
+                    </mat-form-field>
+                    <mat-label>Email Id</mat-label>
+                    <mat-form-field class="email" appearance="outline">
+                        <input formControlName="emailId" type="text" matInput>
+                        <mat-error>Enter Email</mat-error>
+                    </mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <mat-form-field class="password" appearance="outline">
+                        <input formControlName="password" matInput [type]="showPassword ? 'text' : 'password'">
+                        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                            {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                        <mat-error>Enter Password</mat-error>
+                    </mat-form-field>
+                    <mat-label>Mobile Number</mat-label>
+                    <mat-form-field class="mobile" appearance="outline">
+                        <input formControlName="mobileNumber" type="text" matInput>
+                        <mat-error>Enter Mobile Number</mat-error>
+                    </mat-form-field>
+                    <div class="gap1" fxLayout="row">
+                        <button mat-flat-button (click)="signup()" class="btnsignup">Signup</button>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>
